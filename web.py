@@ -13,7 +13,8 @@ import time
 
 def test():
     bot = InstaBot(
-        login=os.environ('username'), password=os.environ('password'),
+        login=os.environ.get('username', None), password=os.environ.get(
+            'password', None),
         like_per_day=1400,
         comments_per_day=200,
         tag_list=[
