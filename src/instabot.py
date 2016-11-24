@@ -248,6 +248,7 @@ class InstaBot:
             else:
                 self.login_status = False
                 self.write_log('Login error! Check your login data!')
+                raise
         else:
             self.write_log('Login error! Connection error!')
 
@@ -384,6 +385,7 @@ class InstaBot:
                                     log_string = "Not liked: %i" \
                                                  % (like.status_code)
                                     self.write_log(log_string)
+                                    raise
                                     return False
                                     # Some error.
                                 i += 1
