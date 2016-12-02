@@ -385,7 +385,8 @@ class InstaBot:
                                     log_string = "Not liked: %i" \
                                                  % (like.status_code)
                                     self.write_log(log_string)
-                                    exit(0)
+                                    if like.status_code == 403:
+                                        exit(0)
                                     return False
                                     # Some error.
                                 i += 1
